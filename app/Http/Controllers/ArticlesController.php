@@ -3,9 +3,9 @@
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ArticleRequest;
 use Carbon\Carbon;
-use Request;
-
+use Illuminate\Http\Request;
 
 class ArticlesController extends Controller {
 
@@ -30,9 +30,24 @@ class ArticlesController extends Controller {
 		return view('articles.create');
 	}
 
-	public function store()
+    /**
+     * @param CreateArticleRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(ArticleRequest $request)
 	{
-		Article::create(Request::all());
+		Article::create($request->all());
 		return redirect('articles');
 	}
+
+    public function edit($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('articles.edit',compact(['article']));
+    }
+    public function update($id, ArticleRequest $request)
+    {
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        return redirect('articles');    }
 }

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - stosc_churchinfo@localhost" uuid="65bb9238-342d-4eae-8502-7dd987003e21">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="stosc_churchinfo"/>
+    <table name="areacodes_code_master" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="code_AreaCode" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="code_AreaDesc" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="code_Comment" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="areacodes_loc" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="loc_PostalDistrict" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="loc_PostalSector" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1"/>
+      <column name="loc_GeneralLocation" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="loc_AreaCode" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+    </table>
+    <table name="autopayment_aut" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="aut_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="aut_FamID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="aut_EnableBankDraft" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="aut_EnableCreditCard" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="aut_NextPayDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="aut_FYID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="OQ=="/>
+      <column name="aut_Amount" sqlType="DECIMAL" precision="6" scale="2" nullable="false" jdbcType="3" def="MC4wMA=="/>
+      <column name="aut_Interval" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="aut_Fund" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="aut_FirstName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_LastName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Address1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Address2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Zip" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Phone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Email" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_CreditCard" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_ExpMonth" sqlType="VARCHAR" precision="2" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_ExpYear" sqlType="VARCHAR" precision="4" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_BankName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Route" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_Account" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="aut_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="aut_EditedBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="aut_Serial" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="aut_ID"/>
+      <index name="aut_ID" unique="true" columns="aut_ID"/>
+    </table>
+    <table name="canvassdata_can" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="can_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="can_famID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="can_Canvasser" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="can_FYID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="true" jdbcType="4"/>
+      <column name="can_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="can_Positive" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="can_Critical" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="can_Insightful" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="can_Financial" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="can_Suggestion" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="can_NotInterested" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="can_WhyNotInterested" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="can_ID"/>
+      <index name="can_ID" unique="true" columns="can_ID"/>
+    </table>
+    <table name="config_cfg" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="cfg_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="cfg_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="cfg_value" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cfg_type" sqlType="ENUM" precision="8" scale="0" nullable="false" jdbcType="1" def="J3RleHQn"/>
+      <column name="cfg_default" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="cfg_tooltip" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="cfg_section" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="cfg_category" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="cfg_id"/>
+      <index name="cfg_name" unique="true" columns="cfg_name"/>
+      <index name="cfg_id" unique="false" columns="cfg_id"/>
+    </table>
+    <table name="deposit_dep" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="dep_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dep_Date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="dep_Comment" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="dep_EnteredBy" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="dep_Closed" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="dep_Type" sqlType="ENUM" precision="10" scale="0" nullable="false" jdbcType="1" def="J0Jhbmsn"/>
+      <primary-key name="PRIMARY" columns="dep_ID"/>
+    </table>
+    <table name="donateditem_di" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="di_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="di_item" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12"/>
+      <column name="di_FR_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="di_donor_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="di_buyer_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="di_multibuy" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="di_title" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="di_description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="di_sellprice" sqlType="DECIMAL" precision="8" scale="2" nullable="true" jdbcType="3"/>
+      <column name="di_estprice" sqlType="DECIMAL" precision="8" scale="2" nullable="true" jdbcType="3"/>
+      <column name="di_minimum" sqlType="DECIMAL" precision="8" scale="2" nullable="true" jdbcType="3"/>
+      <column name="di_materialvalue" sqlType="DECIMAL" precision="8" scale="2" nullable="true" jdbcType="3"/>
+      <column name="di_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="di_EnteredDate" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="di_ID"/>
+      <index name="di_ID" unique="true" columns="di_ID"/>
+    </table>
+    <table name="donationfund_fun" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="fun_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="fun_Active" sqlType="ENUM" precision="5" scale="0" nullable="false" jdbcType="1" def="J3RydWUn"/>
+      <column name="fun_Name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fun_Description" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="fun_ID"/>
+      <index name="fun_ID" unique="true" columns="fun_ID"/>
+    </table>
+    <table name="egive_egv" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="egv_egiveID" sqlType="VARCHAR" precision="16" scale="0" nullable="false" jdbcType="12"/>
+      <column name="egv_famID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="egv_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="egv_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="egv_EnteredBy" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="egv_EditedBy" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+    </table>
+    <table name="email_message_pending_emp" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="emp_usr_id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="emp_to_send" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="emp_subject" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="emp_message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="emp_attach_name" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="emp_attach" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
+    </table>
+    <table name="email_recipient_pending_erp" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="erp_id" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="erp_usr_id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="erp_num_attempt" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="erp_failed_time" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="erp_email_address" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+    </table>
+    <table name="event_attend" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="event_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="person_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="checkin_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="checkin_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="checkout_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="checkout_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <index name="event_id" unique="true" columns="event_id,person_id"/>
+    </table>
+    <table name="event_types" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="type_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="type_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="type_defstarttime" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92" def="JzAwOjAwOjAwJw=="/>
+      <column name="type_defrecurtype" sqlType="ENUM" precision="7" scale="0" nullable="false" jdbcType="1" def="J25vbmUn"/>
+      <column name="type_defrecurDOW" sqlType="ENUM" precision="9" scale="0" nullable="false" jdbcType="1" def="J1N1bmRheSc="/>
+      <column name="type_defrecurDOM" sqlType="CHAR" precision="2" scale="0" nullable="false" jdbcType="1" def="JzAn"/>
+      <column name="type_defrecurDOY" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="JzAwMDAtMDAtMDAn"/>
+      <column name="type_active" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="type_id"/>
+    </table>
+    <table name="eventcountnames_evctnm" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="evctnm_countid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="evctnm_eventtypeid" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="evctnm_countname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="evctnm_notes" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <index name="evctnm_countid" unique="true" columns="evctnm_countid"/>
+      <index name="evctnm_eventtypeid" unique="true" columns="evctnm_eventtypeid,evctnm_countname"/>
+    </table>
+    <table name="eventcounts_evtcnt" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="evtcnt_eventid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="evtcnt_countid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="evtcnt_countname" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="evtcnt_countcount" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="evtcnt_notes" sqlType="VARCHAR" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="evtcnt_eventid,evtcnt_countid"/>
+    </table>
+    <table name="events_event" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="event_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="event_type" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="event_title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="event_desc" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="event_text" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="event_start" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="event_end" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="inactive" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="event_typename" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="event_id"/>
+      <index name="event_txt" unique="false" columns="event_text"/>
+    </table>
+    <table name="family_custom" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="fam_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="c1" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c2" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="c3" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <column name="c4" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c5" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <column name="c6" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="fam_ID"/>
+    </table>
+    <table name="family_custom_master" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="fam_custom_Order" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fam_custom_Field" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="fam_custom_Name" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="fam_custom_Special" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="fam_custom_Side" sqlType="ENUM" precision="5" scale="0" nullable="false" jdbcType="1" def="J2xlZnQn"/>
+      <column name="fam_custom_FieldSec" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="type_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+    </table>
+    <table name="family_fam" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="fam_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fam_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Address1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Address2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Zip" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_HomePhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_WorkPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_CellPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Email" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_WeddingDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fam_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="fam_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="fam_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fam_EditedBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="fam_scanCheck" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="fam_scanCredit" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="fam_SendNewsLetter" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J0ZBTFNFJw=="/>
+      <column name="fam_DateDeactivated" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fam_OkToCanvass" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J0ZBTFNFJw=="/>
+      <column name="fam_Canvasser" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fam_Latitude" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="fam_Longitude" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="fam_Envelope" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fam_FamilyRef" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="fam_ID"/>
+      <index name="FamilyRefUnique" unique="true" columns="fam_FamilyRef"/>
+      <index name="fam_ID" unique="false" columns="fam_ID"/>
+    </table>
+    <table name="familywithcustom" schema="" catalog="stosc_churchinfo" type="VIEW">
+      <column name="fam_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fam_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Address1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Address2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Zip" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_HomePhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_WorkPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_CellPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_Email" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="fam_WeddingDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fam_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="fam_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="fam_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fam_EditedBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="fam_scanCheck" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="fam_scanCredit" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="fam_SendNewsLetter" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J0ZBTFNFJw=="/>
+      <column name="fam_DateDeactivated" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fam_OkToCanvass" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J0ZBTFNFJw=="/>
+      <column name="fam_Canvasser" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fam_Latitude" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="fam_Longitude" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="fam_Envelope" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="fam_FamilyRef" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Home_Parish" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Membership_Date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="Annual_Subscription_Pledge" sqlType="DECIMAL" precision="10" scale="2" nullable="true" jdbcType="3"/>
+      <column name="Related_Families" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="fundraiser_fr" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="fr_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fr_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="fr_title" sqlType="VARCHAR" precision="128" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fr_description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="fr_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="fr_EnteredDate" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="fr_ID"/>
+      <index name="fr_ID" unique="true" columns="fr_ID"/>
+    </table>
+    <table name="group_grp" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="grp_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="grp_Type" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="grp_RoleListID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="grp_DefaultRole" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="grp_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="grp_Description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="grp_hasSpecialProps" sqlType="ENUM" precision="5" scale="0" nullable="false" jdbcType="1" def="J2ZhbHNlJw=="/>
+      <primary-key name="PRIMARY" columns="grp_ID"/>
+      <index name="grp_ID" unique="true" columns="grp_ID"/>
+    </table>
+    <table name="groupprop_3" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="per_ID"/>
+      <index name="per_ID" unique="true" columns="per_ID"/>
+    </table>
+    <table name="groupprop_master" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="grp_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="prop_ID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="prop_Field" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="prop_Name" sqlType="VARCHAR" precision="40" scale="0" nullable="true" jdbcType="12"/>
+      <column name="prop_Description" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
+      <column name="type_ID" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="prop_Special" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="prop_PersonDisplay" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J2ZhbHNlJw=="/>
+    </table>
+    <table name="istlookup_lu" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="lu_fam_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lu_LookupDateTime" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="lu_DeliveryLine1" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_DeliveryLine2" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_ZipAddon" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_Zip" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_Addon" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_LOTNumber" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_DPCCheckdigit" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_RecordType" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_LastLine" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_CarrierRoute" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_ReturnCodes" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_ErrorCodes" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lu_ErrorDesc" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="lu_fam_ID"/>
+    </table>
+    <table name="list_lst" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="lst_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lst_OptionID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="lst_OptionSequence" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="lst_OptionName" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+    </table>
+    <table name="menuconfig_mcf" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="mid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="parent" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ismenu" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="content_english" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="content" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="uri" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="statustext" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="security_grp" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="session_var" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="session_var_in_text" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="session_var_in_uri" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="url_parm_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="sortorder" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="mid"/>
+    </table>
+    <table name="multibuy_mb" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="mb_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="mb_per_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="mb_item_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="mb_count" sqlType="DECIMAL" precision="8" scale="0" nullable="true" jdbcType="3"/>
+      <primary-key name="PRIMARY" columns="mb_ID"/>
+      <index name="mb_ID" unique="true" columns="mb_ID"/>
+    </table>
+    <table name="note_nte" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="nte_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nte_per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nte_fam_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nte_Private" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nte_Text" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="nte_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="nte_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="nte_EnteredBy" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="nte_EditedBy" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="nte_ID"/>
+    </table>
+    <table name="paddlenum_pn" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="pn_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pn_fr_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="pn_Num" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="pn_per_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="pn_ID"/>
+      <index name="pn_ID" unique="true" columns="pn_ID"/>
+    </table>
+    <table name="person2group2role_p2g2r" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="p2g2r_per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="p2g2r_grp_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="p2g2r_rle_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="p2g2r_per_ID,p2g2r_grp_ID"/>
+      <index name="p2g2r_per_ID" unique="false" columns="p2g2r_per_ID,p2g2r_grp_ID,p2g2r_rle_ID"/>
+    </table>
+    <table name="person2volunteeropp_p2vo" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="p2vo_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="p2vo_per_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="true" jdbcType="4"/>
+      <column name="p2vo_vol_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="p2vo_ID"/>
+      <index name="p2vo_ID" unique="true" columns="p2vo_ID"/>
+    </table>
+    <table name="person_custom" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="per_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="c1" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c5" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c6" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="c7" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="c8" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="c9" sqlType="ENUM" precision="6" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="per_ID"/>
+    </table>
+    <table name="person_custom_master" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="custom_Order" sqlType="SMALLINT" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="custom_Field" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="custom_Name" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="custom_Special" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="custom_Side" sqlType="ENUM" precision="5" scale="0" nullable="false" jdbcType="1" def="J2xlZnQn"/>
+      <column name="custom_FieldSec" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="type_ID" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+    </table>
+    <table name="person_per" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="per_Title" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_FirstName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_MiddleName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_LastName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Suffix" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Address1" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Address2" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Zip" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_HomePhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_WorkPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_CellPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_WorkEmail" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_BirthMonth" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_BirthDay" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_BirthYear" sqlType="YEAR" precision="0" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_MembershipDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_Gender" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_fmr_ID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_cls_ID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_fam_ID" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="per_Envelope" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="per_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="per_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="per_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="per_EditedBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="per_FriendDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_Flags" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <primary-key name="PRIMARY" columns="per_ID"/>
+      <index name="per_ID" unique="false" columns="per_ID"/>
+    </table>
+    <table name="personwithcustom" schema="" catalog="stosc_churchinfo" type="VIEW">
+      <column name="per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="per_Title" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_FirstName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_MiddleName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_LastName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Suffix" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Address1" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Address2" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_City" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_State" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Zip" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_HomePhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_WorkPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_CellPhone" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_Email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_WorkEmail" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="per_BirthMonth" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_BirthDay" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_BirthYear" sqlType="YEAR" precision="0" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_MembershipDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_Gender" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_fmr_ID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_cls_ID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="per_fam_ID" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="per_Envelope" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="per_DateLastEdited" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="per_DateEntered" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="per_EnteredBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="per_EditedBy" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="true" jdbcType="5" def="MA=="/>
+      <column name="per_FriendDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="per_Flags" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="NickName" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Occupation" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="Bloodgroup" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="NRIC" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="pledge_plg" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="plg_plgID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="plg_FamID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="true" jdbcType="4"/>
+      <column name="plg_FYID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="true" jdbcType="4"/>
+      <column name="plg_date" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="plg_amount" sqlType="DECIMAL" precision="8" scale="2" nullable="true" jdbcType="3"/>
+      <column name="plg_schedule" sqlType="ENUM" precision="9" scale="0" nullable="true" jdbcType="1"/>
+      <column name="plg_method" sqlType="ENUM" precision="11" scale="0" nullable="true" jdbcType="1"/>
+      <column name="plg_comment" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="plg_DateLastEdited" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="JzAwMDAtMDAtMDAn"/>
+      <column name="plg_EditedBy" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="plg_PledgeOrPayment" sqlType="ENUM" precision="7" scale="0" nullable="false" jdbcType="1" def="J1BsZWRnZSc="/>
+      <column name="plg_fundID" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="plg_depID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="true" jdbcType="4"/>
+      <column name="plg_CheckNo" sqlType="BIGINT UNSIGNED" precision="20" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="plg_Problem" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="plg_scanString" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="plg_aut_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="plg_aut_Cleared" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="plg_aut_ResultID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="plg_NonDeductible" sqlType="DECIMAL" precision="8" scale="2" nullable="false" jdbcType="3"/>
+      <column name="plg_GroupKey" sqlType="VARCHAR" precision="64" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="plg_plgID"/>
+    </table>
+    <table name="property_pro" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="pro_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_Class" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="pro_prt_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="pro_Name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
+      <column name="pro_Description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="pro_Prompt" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="pro_ID"/>
+    </table>
+    <table name="propertytype_prt" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="prt_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="prt_Class" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="prt_Name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="prt_Description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="prt_ID"/>
+    </table>
+    <table name="query_qry" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="qry_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="qry_Name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="qry_SQL" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="qry_Description" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="qry_Count" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="qry_Active" sqlType="BIT" precision="1" scale="0" nullable="false" jdbcType="-7"/>
+      <primary-key name="PRIMARY" columns="qry_ID"/>
+      <index name="qry_ID" unique="true" columns="qry_ID"/>
+      <index name="qry_ID_2" unique="false" columns="qry_ID"/>
+    </table>
+    <table name="queryparameteroptions_qpo" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="qpo_ID" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" autoIncrement="true"/>
+      <column name="qpo_qrp_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="qpo_Display" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="qpo_Value" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="qpo_ID"/>
+      <index name="qpo_ID" unique="true" columns="qpo_ID"/>
+    </table>
+    <table name="queryparameters_qrp" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="qrp_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="qrp_qry_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="qrp_Type" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="qrp_OptionSQL" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="qrp_Name" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="qrp_Description" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="qrp_Alias" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="qrp_Default" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="qrp_Required" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="qrp_InputBoxSize" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="qrp_Validation" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="qrp_NumericMax" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qrp_NumericMin" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qrp_AlphaMinLength" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="qrp_AlphaMaxLength" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="qrp_ID"/>
+      <index name="qrp_ID" unique="true" columns="qrp_ID"/>
+      <index name="qrp_ID_2" unique="false" columns="qrp_ID"/>
+      <index name="qrp_qry_ID" unique="false" columns="qrp_qry_ID"/>
+    </table>
+    <table name="record2property_r2p" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="r2p_pro_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="r2p_record_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="r2p_Value" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+    </table>
+    <table name="result_res" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="res_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="res_echotype1" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_echotype2" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_echotype3" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_authorization" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_order_number" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_reference" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_status" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_avs_result" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_security_result" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_mac" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_decline_code" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_tran_date" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_merchant_name" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_version" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="res_EchoServer" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="res_ID"/>
+    </table>
+    <table name="user_usr" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="usr_per_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="usr_Password" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="usr_NeedPasswordChange" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="usr_LastLogin" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="usr_LoginCount" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
+      <column name="usr_FailedLogins" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_AddRecords" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_EditRecords" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_DeleteRecords" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_MenuOptions" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_ManageGroups" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_Finance" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_Communication" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_Notes" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_Admin" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_Workspacewidth" sqlType="SMALLINT" precision="5" scale="0" nullable="true" jdbcType="5"/>
+      <column name="usr_BaseFontSize" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="usr_SearchLimit" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MTA="/>
+      <column name="usr_Style" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12" def="J1N0eWxlLmNzcyc="/>
+      <column name="usr_showPledges" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_showPayments" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_showSince" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="JzAwMDAtMDAtMDAn"/>
+      <column name="usr_defaultFY" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MTA="/>
+      <column name="usr_currentDeposit" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="usr_UserName" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="usr_EditSelf" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <column name="usr_CalStart" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalEnd" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool1" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool2" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool3" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool4" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool5" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool6" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool7" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_CalNoSchool8" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="usr_SearchFamily" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="usr_Canvasser" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="usr_per_ID"/>
+      <index name="usr_UserName" unique="true" columns="usr_UserName"/>
+      <index name="usr_per_ID" unique="false" columns="usr_per_ID"/>
+    </table>
+    <table name="userconfig_ucfg" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="ucfg_per_id" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ucfg_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="ucfg_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="ucfg_value" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="ucfg_type" sqlType="ENUM" precision="8" scale="0" nullable="false" jdbcType="1" def="J3RleHQn"/>
+      <column name="ucfg_tooltip" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ucfg_permission" sqlType="ENUM" precision="6" scale="0" nullable="false" jdbcType="1" def="J0ZBTFNFJw=="/>
+      <column name="ucfg_cat" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ucfg_per_id,ucfg_id"/>
+    </table>
+    <table name="version_ver" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="ver_ID" sqlType="MEDIUMINT UNSIGNED" precision="8" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ver_version" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="ver_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ver_ID"/>
+      <index name="ver_version" unique="true" columns="ver_version"/>
+    </table>
+    <table name="volunteeropportunity_vol" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="vol_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="vol_Order" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="vol_Active" sqlType="ENUM" precision="5" scale="0" nullable="false" jdbcType="1" def="J3RydWUn"/>
+      <column name="vol_Name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="vol_Description" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="vol_ID"/>
+      <index name="vol_ID" unique="true" columns="vol_ID"/>
+    </table>
+    <table name="whycame_why" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="why_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="why_per_ID" sqlType="MEDIUMINT" precision="7" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="why_join" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="why_come" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="why_suggest" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="why_hearOfUs" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="why_ID"/>
+    </table>
+    <table name="yearcode_ycd" schema="" catalog="stosc_churchinfo" type="TABLE">
+      <column name="ycd_Year" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ycd_Code" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ycd_Year"/>
+    </table>
+  </data-source>
+  <data-source name="SQLite -" uuid="f21cea8c-eb5f-429a-bcad-8c7349acfcf8">
+    <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="articles" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="body" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="published_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="excerpt" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="migrations" schema="" catalog="" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="password_resets" schema="" catalog="" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <index name="password_resets_token_index" unique="true" columns="token"/>
+      <index name="password_resets_email_index" unique="true" columns="email"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="tasks" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="due_date" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="users" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+    </table>
+  </data-source>
+</component>
